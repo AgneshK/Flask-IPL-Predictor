@@ -1,0 +1,217 @@
+* {
+    background-color: #121212;
+    color: white;
+    font-family: "Poppins";
+    font-size: 11px;
+}
+
+img {
+    width: 100%;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    width: 99%;
+    margin: 0 auto;
+    padding-top: 1em;
+}
+
+label {
+    color: rgb(205, 205, 205);
+    font-size: 0.7rem;
+    margin-left: 1.5em;
+}
+
+select {
+    width: 88%;
+    padding: 0.7em;
+    border-style: none;
+    border-bottom: solid 2px rgb(82, 82, 82);
+    margin-left: 2em;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    cursor: pointer;
+}
+
+input {
+    width: 70%;
+    padding: 0.7em;
+    border-style: none;
+    border-bottom: solid 2px rgb(82, 82, 82);
+    margin-left: 2em;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+}
+
+footer {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+}
+
+button {
+    border: none;
+    margin-top: 2em;
+    border: solid 2px rgb(82, 82, 82);
+    border-radius: 30px;
+    width: 8em;
+    padding: 0.6em;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.25s;
+    margin-left: 4em;
+}
+
+button:hover {
+    background-color: rgb(82, 82, 82);
+}
+
+.ipl-logo {
+    width: 17%;
+    max-width: 100px;
+}
+
+.bcci-logo {
+    width: 11%;
+    max-width: 60px;
+    margin-right: 0.9em;
+}
+
+.website-name {
+    padding-top: 0.3em;
+    font-size: 1.5rem;
+    line-height: 9vh;
+    font-weight: 500;
+}
+
+.prediction-form {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-48%, -45%);
+    width: 90%;
+    padding: 0.5em;
+    max-width: 620px;
+}
+
+.bat-bowl-ground {
+    margin: 0 auto;
+    width: 90%;
+}
+
+.target-score {
+    margin: 0 auto;
+    display: flex;
+    width: 90%;
+}
+
+.target-score div {
+    width: 100%;
+    margin: 0 auto;
+}
+
+.disclaimer {
+    color: rgb(127, 127, 127);
+    font-size: 0.6rem;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    padding: 1em;
+}
+
+.results {
+    float: right;
+    justify-content: space-around;
+    text-align: right;
+    width: 50%;
+    margin-right: 7em;
+    margin-top: 1em;
+}
+
+.error {
+    color: #ff4d4d;
+    font-size: 0.8rem;
+    margin-left: 2em;
+    margin-top: 0.2em;
+}
+
+@media (max-width: 470px) {
+
+    input {
+        width: 84%;
+    }
+    .target-score {
+        display: block;
+        width: 90%;
+    }
+
+    .target-score div {
+        width: 100%;
+    }
+
+    .website-name {
+        font-size: 1.2em;
+    }
+
+    .results {
+        margin-right: 4em;
+    }
+    .results p, .results h2 {
+        font-size: 0.8em;
+    }
+
+    .error {
+        font-size: 0.7rem;
+        margin-left: 2.5em;
+    }
+
+    .disclaimer {
+        font-size: 0.6em;
+    }
+}
+
+@media (max-width: 390px) {
+    button {
+        margin-left: 3em;
+    }
+    .results {
+        margin-right: 2.5em;
+    }
+    .results p, .results h2 {
+        font-size: 0.7em;
+    }
+
+    .error {
+        font-size: 0.65rem;
+        margin-left: 2.2em;
+    }
+
+    .disclaimer {
+        font-size: 0.5em;
+    }
+}
+
+@media (max-width: 330px) {
+    button {
+        margin-left: 2.5em;
+    }
+    .results {
+        margin-right: 2.5em;
+        margin-top: 2em;
+    }
+    .results p, .results h2 {
+        font-size: 0.5em;
+    }
+
+    .error {
+        font-size: 0.55rem;
+        margin-left: 2em;
+    }
+
+    .disclaimer {
+        font-size: 0.45em;
+    }
+}
+
+

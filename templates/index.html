@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>IPL Match Win Predictor</title>
+</head>
+<body>
+    <header>
+        <div class="ipl-logo">
+            <img src="{{ url_for('static', filename='images/ipl.png') }}" alt="IPL Logo">
+        </div>
+        <div class="website-name">
+            IPL Match Winner Predictor
+        </div>
+        <div class="bcci-logo">
+            <img src="{{ url_for('static', filename='images/bcci.png') }}" alt="BCCI Logo">
+        </div>
+    </header>
+
+    <div class="prediction-form">
+        <form action="{{ url_for('predict') }}" method="post">
+            {{ form.hidden_tag() }}
+            <div class="bat-bowl-ground">
+                <label for="batting_team">Select the Batting Team</label><br>
+                {{ form.batting_team(class_='form-control') }}<br>
+                <label for="bowling_team">Select the Bowling Team</label><br>
+                {{ form.bowling_team(class_='form-control') }}<br>
+                <label for="selected_city">Home ground</label><br>
+                {{ form.selected_city(class_='form-control') }}<br>
+            </div>
+            <div class="target-score">
+                <div>
+                    <label for="target">Target</label><br>
+                    {{ form.target(class_='form-control') }}
+                    {% if form.target.errors %}
+                    <div class="error">{{ form.target.errors[0] }}</div>
+                    {% endif %}
+                </div>
+                <div>
+                    <label for="score">Score</label><br>
+                    {{ form.score(class_='form-control') }}
+                    {% if form.score.errors %}
+                    <div class="error">{{ form.score.errors[0] }}</div>
+                    {% endif %}
+                </div>
+            </div>
+            <div class="target-score">
+                <div>
+                    <label for="overs">Overs Completed</label><br>
+                    {{ form.overs(class_='form-control') }}
+                    {% if form.overs.errors %}
+                    <div class="error">{{ form.overs.errors[0] }}</div>
+                    {% endif %}
+                </div>
+                <div>
+                    <label for="wickets">Wickets Out</label><br>
+                    {{ form.wickets(class_='form-control') }}
+                    {% if form.wickets.errors %}
+                    <div class="error">{{ form.wickets.errors[0] }}</div>
+                    {% endif %}
+                </div>
+            </div>
+            <button type="submit" class="btn btn-primary">Predict</button>
+            {% if win is defined and loss is defined %}
+            <div class="results">
+                <div class="stats">
+                    <h2>Prediction Results:</h2>
+                    <p>{{ form.batting_team.data }}: {{ (win * 100) | round(2) }}%</p>
+                    <p>{{ form.bowling_team.data }}: {{ (loss * 100) | round(2) }}%</p>
+                </div>
+            </div>
+            {% endif %}
+        </form>
+    </div>
+    <footer>
+        <div class="disclaimer">
+            This IPL match win predictor tool only includes the original IPL teams. Teams such as Gujarat Titans and Lucknow Super Giants have not been included as they have not participated in as many matches as the original teams. Therefore, the predictions made by this tool do not produce the outcomes of matches involving these additional teams.
+        </div>
+        <div class="socials">
+            <!-- Social media links or icons can be added here -->
+        </div>
+    </footer>
+</body>
+</html>
+
+
+
+
+
